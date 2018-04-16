@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #000;
+}
+.wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: #0095ff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.wave::before,
+.wave::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  width: 120%;
+  height: 120%;
+  margin-left: -10%;
+  background-color: #fff;
+  border-radius: 35% 36% 37% 38%;
+  transform-origin: 48% 49%;
+  animation: waveRotate 4s infinite linear both;
+}
+.wave::after {
+  top: -80px;
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: waveRotate2 4s infinite linear both;
+}
+@keyframes waveRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes waveRotate2 {
+  to {
+    transform: rotate(405deg);
+  }
+}
